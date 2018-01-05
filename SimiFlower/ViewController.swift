@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var extractLabel: UILabel!
+    @IBOutlet weak var userPickedImageView: UIImageView!
     
     var pickedImage: UIImage?
     
@@ -36,7 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let userPickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            imageView.image = userPickedImage
+            userPickedImageView.image = userPickedImage
             guard let ciImage = CIImage(image: userPickedImage) else {
                 fatalError("Could not convert UIImage to CIImage")
             }
@@ -97,10 +99,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         Alamofire.request(wikiURL, method: .get, parameters: params).responseJSON { response in
             if response.result.isSuccess {
-                print(response)
+                self.updateFlowerData(flowerJSON: JSON(response.result.value!))
+            } else {
+                self.extractLabel.text = "Unable to get data!"
             }
         }
     }
+    
+    //MARK: - SwiftyJSON JSON parsing methods
+    func updateFlowerData(flowerJSON: JSON) {
+        if let wikiPageID = flowerJSON["query"]["pageids"][0].string {
+            if let wikiExtract = flowerJSON["query"]["pages"][wikiPageID]["extract"].string {
+                extractLabel.text = wikiExtract
+            }
+            if let wikiPageImageURL = flowerJSON["query"]["pages"][wikiPageID]["pageimage"].string {
+                
+            }
+        }
+    }
+    
+    //MARK: - Loading image from URL
+    
 
 }
 
