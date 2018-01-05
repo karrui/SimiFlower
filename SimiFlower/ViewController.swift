@@ -9,6 +9,8 @@
 import UIKit
 import CoreML
 import Vision
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -59,6 +61,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let firstResult = results.first {
                 let identifier = firstResult.identifier
                 self.navigationItem.title = identifier.capitalized
+                
+                self.getWikiData(flowerName: identifier)
             }
             
         }
@@ -77,6 +81,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Dispose of any resources that can be recreated.
     }
 
+    
+    //MARK: - Alamofire networking methods
+    func getWikiData(flowerName: String) {
+        let wikiURL = "https://en.wikipedia.org/w/api.php"
+        let params : [String: String] = [
+            "format": "json",
+            "action": "query",
+            "prop": "extracts",
+            "exintro": "",
+            "explaintext": "",
+            "titles": flowerName,
+            "indexpageids": "",
+            "redirects": "1",]
+        
+        Alamofire.request(wikiURL, method: .get, parameters: params).responseJSON { response in
+            if response.result.isSuccess {
+                print(response)
+            }
+        }
+    }
 
 }
 
