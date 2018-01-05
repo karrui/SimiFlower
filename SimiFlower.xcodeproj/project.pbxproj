@@ -12,6 +12,7 @@
 		979246EB1FFFB8CA00ADAAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979246E91FFFB8CA00ADAAC6 /* Main.storyboard */; };
 		979246ED1FFFB8CA00ADAAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979246EC1FFFB8CA00ADAAC6 /* Assets.xcassets */; };
 		979246F01FFFB8CA00ADAAC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979246EE1FFFB8CA00ADAAC6 /* LaunchScreen.storyboard */; };
+		979246F81FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 979246F71FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		979246EC1FFFB8CA00ADAAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		979246EF1FFFB8CA00ADAAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		979246F11FFFB8CA00ADAAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		979246F71FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				979246EC1FFFB8CA00ADAAC6 /* Assets.xcassets */,
 				979246EE1FFFB8CA00ADAAC6 /* LaunchScreen.storyboard */,
 				979246F11FFFB8CA00ADAAC6 /* Info.plist */,
+				979246F71FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel */,
 			);
 			path = SimiFlower;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				979246F81FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel in Sources */,
 				979246E81FFFB8CA00ADAAC6 /* ViewController.swift in Sources */,
 				979246E61FFFB8CA00ADAAC6 /* AppDelegate.swift in Sources */,
 			);
