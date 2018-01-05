@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var extractLabel: UILabel!
     @IBOutlet weak var userPickedImageView: UIImageView!
+    @IBOutlet weak var confidenceLabel: UILabel!
     
     var pickedImage: UIImage?
     
@@ -64,7 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let firstResult = results.first {
                 let identifier = firstResult.identifier
                 self.navigationItem.title = identifier.capitalized
-                
+                self.confidenceLabel.text = "\(Int(firstResult.confidence * 100))% confident"
                 self.getWikiData(flowerName: identifier)
             }
             
@@ -118,6 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let flowerImageURL = flowerJSON["query"]["pages"][wikiPageID]["thumbnail"]["source"].string {
                 self.imageView.sd_setImage(with: URL(string: flowerImageURL))
                 self.view.bringSubview(toFront: userPickedImageView)
+                self.view.bringSubview(toFront: confidenceLabel)
             } else {
                 self.imageView.image = #imageLiteral(resourceName: "not-found")
             }

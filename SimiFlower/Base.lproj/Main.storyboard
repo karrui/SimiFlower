@@ -19,6 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-9w-1ZU">
+                                <rect key="frame" x="124" y="84" width="127.5" height="0.0"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EH5-ni-BZh">
                                 <rect key="frame" x="20" y="84" width="94" height="94"/>
                             </imageView>
@@ -28,13 +36,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kHv-QK-aTy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-9F-Cqi">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-9F-Cqi">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-yN-SwF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-yN-SwF">
                                                 <rect key="frame" x="0.0" y="402" width="375" height="201"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -51,8 +59,9 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.38388821165018078" green="0.78277680837563457" blue="0.029320540160879843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rpj-9w-1ZU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BRg-Io-0FT"/>
                             <constraint firstItem="eW8-CD-ci9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ba2-Gn-FMh"/>
                             <constraint firstItem="EH5-ni-BZh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="DVp-Sq-NWI"/>
                             <constraint firstItem="EH5-ni-BZh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hf7-Su-zLx"/>
@@ -61,11 +70,14 @@
                             <constraint firstItem="eW8-CD-ci9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PBe-8Y-Z7e"/>
                             <constraint firstItem="EH5-ni-BZh" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="1:4" id="VKC-da-JoG"/>
                             <constraint firstItem="EH5-ni-BZh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XrT-KR-f55"/>
+                            <constraint firstItem="Rpj-9w-1ZU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayW-dx-TVQ"/>
+                            <constraint firstItem="Rpj-9w-1ZU" firstAttribute="leading" secondItem="EH5-ni-BZh" secondAttribute="trailing" constant="10" id="vrQ-Tn-XWL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sFu-md-arF">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="mpE-8N-YQf">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="kVK-oD-aTY"/>
                             </connections>
@@ -73,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="mpE-8N-YQf" id="Qzs-sq-BnU"/>
+                        <outlet property="confidenceLabel" destination="Rpj-9w-1ZU" id="mRa-Fc-tMU"/>
                         <outlet property="extractLabel" destination="2xM-yN-SwF" id="bzm-Od-BhU"/>
                         <outlet property="imageView" destination="ugg-9F-Cqi" id="hg6-Mq-bq3"/>
                         <outlet property="userPickedImageView" destination="EH5-ni-BZh" id="r7U-fL-pi4"/>
@@ -90,6 +103,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UcZ-R2-r6l">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.020859791189877464" green="0.28121034263959388" blue="5.4063317358210106e-05" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
