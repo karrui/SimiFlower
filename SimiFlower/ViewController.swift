@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if let firstResult = results.first {
                 let identifier = firstResult.identifier
-                self.navigationItem.title = identifier
+                self.navigationItem.title = identifier.capitalized
             }
             
         }

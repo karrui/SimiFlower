@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02341C7DF2DAFF7296F66D83 /* Pods_SimiFlower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009C0C734209C123501F37F1 /* Pods_SimiFlower.framework */; };
 		979246E61FFFB8CA00ADAAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979246E51FFFB8CA00ADAAC6 /* AppDelegate.swift */; };
 		979246E81FFFB8CA00ADAAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979246E71FFFB8CA00ADAAC6 /* ViewController.swift */; };
 		979246EB1FFFB8CA00ADAAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979246E91FFFB8CA00ADAAC6 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		009C0C734209C123501F37F1 /* Pods_SimiFlower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimiFlower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5933E796C3B9439F0C57E64F /* Pods-SimiFlower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimiFlower.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimiFlower/Pods-SimiFlower.release.xcconfig"; sourceTree = "<group>"; };
 		979246E21FFFB8CA00ADAAC6 /* SimiFlower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimiFlower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		979246E51FFFB8CA00ADAAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		979246E71FFFB8CA00ADAAC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		979246EF1FFFB8CA00ADAAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		979246F11FFFB8CA00ADAAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979246F71FFFB8EE00ADAAC6 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		9E5E5E03E8A303750DC3D776 /* Pods-SimiFlower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimiFlower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimiFlower/Pods-SimiFlower.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02341C7DF2DAFF7296F66D83 /* Pods_SimiFlower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114D3200B3DCBEF1547FB025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				009C0C734209C123501F37F1 /* Pods_SimiFlower.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		979246D91FFFB8CA00ADAAC6 = {
 			isa = PBXGroup;
 			children = (
 				979246E41FFFB8CA00ADAAC6 /* SimiFlower */,
 				979246E31FFFB8CA00ADAAC6 /* Products */,
+				FE2172449CB7C05BBFFF6A29 /* Pods */,
+				114D3200B3DCBEF1547FB025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = SimiFlower;
 			sourceTree = "<group>";
 		};
+		FE2172449CB7C05BBFFF6A29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E5E5E03E8A303750DC3D776 /* Pods-SimiFlower.debug.xcconfig */,
+				5933E796C3B9439F0C57E64F /* Pods-SimiFlower.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 979246F41FFFB8CA00ADAAC6 /* Build configuration list for PBXNativeTarget "SimiFlower" */;
 			buildPhases = (
+				EAE8D168A91390A220353BD2 /* [CP] Check Pods Manifest.lock */,
 				979246DE1FFFB8CA00ADAAC6 /* Sources */,
 				979246DF1FFFB8CA00ADAAC6 /* Frameworks */,
 				979246E01FFFB8CA00ADAAC6 /* Resources */,
+				1A37A0BB5F9784F66987E074 /* [CP] Embed Pods Frameworks */,
+				8F1623A1871FC0EF4713FC4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A37A0BB5F9784F66987E074 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimiFlower/Pods-SimiFlower-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimiFlower/Pods-SimiFlower-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F1623A1871FC0EF4713FC4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimiFlower/Pods-SimiFlower-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE8D168A91390A220353BD2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimiFlower-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		979246DE1FFFB8CA00ADAAC6 /* Sources */ = {
@@ -276,6 +359,7 @@
 		};
 		979246F51FFFB8CA00ADAAC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E5E5E03E8A303750DC3D776 /* Pods-SimiFlower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,6 +376,7 @@
 		};
 		979246F61FFFB8CA00ADAAC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5933E796C3B9439F0C57E64F /* Pods-SimiFlower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
