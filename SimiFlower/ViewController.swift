@@ -11,6 +11,7 @@ import CoreML
 import Vision
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -90,12 +91,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let params : [String: String] = [
             "format": "json",
             "action": "query",
-            "prop": "extracts",
+            "prop": "extracts|pageimages",
             "exintro": "",
             "explaintext": "",
             "titles": flowerName,
             "indexpageids": "",
-            "redirects": "1",]
+            "redirects": "1",
+            "pithumbsize": "500"
+            ]
         
         Alamofire.request(wikiURL, method: .get, parameters: params).responseJSON { response in
             if response.result.isSuccess {
@@ -109,17 +112,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: - SwiftyJSON JSON parsing methods
     func updateFlowerData(flowerJSON: JSON) {
         if let wikiPageID = flowerJSON["query"]["pageids"][0].string {
-            if let wikiExtract = flowerJSON["query"]["pages"][wikiPageID]["extract"].string {
-                extractLabel.text = wikiExtract
+            if let flowerExtract = flowerJSON["query"]["pages"][wikiPageID]["extract"].string {
+                extractLabel.text = flowerExtract
             }
-            if let wikiPageImageURL = flowerJSON["query"]["pages"][wikiPageID]["pageimage"].string {
-                
+            if let flowerImageURL = flowerJSON["query"]["pages"][wikiPageID]["thumbnail"]["source"].string {
+                self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+                self.view.bringSubview(toFront: userPickedImageView)
+            } else {
+                self.imageView.image = #imageLiteral(resourceName: "not-found")
             }
         }
     }
-    
-    //MARK: - Loading image from URL
-    
 
 }
 
